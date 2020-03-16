@@ -15,10 +15,10 @@ The requirements for the test project are:
 different countries in Europe and Asia
 - Sync all countries in Europe and Asia from https://restcountries.eu/
 - Users need to create an account (username, password, email)
-- Users should be able to update and delete their accountuse
+- Users should be able to update and delete their account use
 - Users should be able to create, update and delete trips to countries**
 - Trips are only visible to the user who created them
-- A trip needs to have following informations: Country, start date, end
+- A trip needs to have following information: Country, start date, end
 date and notes
 - A trip can start at the end date of another trip, but they are not
 allowed to overlap
@@ -30,7 +30,7 @@ Bonus:
 
 ## Installation
 ### Docker dev environment.
-1. Install docker and dcoker-compose
+1. Install docker and docker-compose
 2. Clone repository [https://github.com/redilinxa/trip-tracker.git].
 3. Enter in {project_dir}/docker and run docker-compose up.
 4. Open a new terminal window and go again in the {project_root} directory to run: `docker exec -it docker_php-fpm_1 bin/console d:m:m`
@@ -45,7 +45,9 @@ Make sure you have a local environment suitable for this application based on th
 
 
 ## Usage
-Project routes
+#### Docker generated base url: http://localhost:8089/
+
+#### Project routes
  ----------------------- -------- -------------------------------------- 
   Name                    Method   Path                                  
  ----------------------- -------- -------------------------------------- 
@@ -64,3 +66,8 @@ Project routes
 Sample of the call could be found on the test/UserTripTest.php
 Also, if you are using postman, i have created e collection of routes with sample calls
 for an easy import. Please import the trip `trip_advisor.postman_collection.json` on the project route.
+
+
+## Improvements
+- Handle password validation (in real life scenarios password should be saved as encrypted)
+- Authentication with JWT.
