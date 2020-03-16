@@ -1,3 +1,5 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+# the section for the api routes
+app_api:
+  resource: "routes/api/routing_api.yml"
+  prefix: /api
+  type: rest

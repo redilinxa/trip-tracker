@@ -1,0 +1,30 @@
+App\Entity\User:
+  constraints:
+    - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: email
+    - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: username
+  properties:
+    username:
+      - NotBlank: ~
+    password:
+      - NotBlank: ~
+    email:
+      - Email: ~
+
+App\Entity\Trip:
+  properties:
+    user:
+      - NotBlank:
+          groups: [CreateTrip]
+      - Type: App\Entity\User
+    country:
+      - NotBlank:
+          groups: [CreateTrip, UpdateTrip]
+      - Type: App\Entity\Country
+    startDate:
+      - NotBlank:
+          groups: [CreateTrip, UpdateTrip]
+      - Type: \DateTime
+    endDate:
+      - NotBlank:
+          groups: [CreateTrip, UpdateTrip]
+      - Type: \DateTime

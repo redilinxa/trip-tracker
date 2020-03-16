@@ -1,0 +1,10 @@
+fos_rest:
+  zone:
+    - { path: ^/api/* }
+  view:
+    serialize_null: true
+  serializer:
+    serialize_null: true
+  routing_loader:
+    default_format: json
+    include_format: false

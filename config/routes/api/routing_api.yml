@@ -1,0 +1,51 @@
+# User routes
+trip_api.users.list:
+  path: /users/list
+  controller: App\Controller\API\UserController::list
+  methods: GET
+
+trip_api.users.create:
+  path: /users/create
+  controller: App\Controller\API\UserController::create
+  methods: POST
+
+trip_api.users.show:
+  path: /users/{id}/show
+  controller: App\Controller\API\UserController::show
+  methods: GET
+
+trip_api.users.update:
+  path: /users/{id}/update
+  controller: App\Controller\API\UserController::update
+  methods: PUT
+
+trip_api.users.delete:
+  path: /users/{id}/delete
+  controller: App\Controller\API\UserController::delete
+  methods: DELETE
+
+# Trip routes
+trip_api.trips.list:
+  path: /trips/user/{user}/list
+  controller: App\Controller\API\TripController::list
+  methods: GET
+
+trip_api.trips.create:
+  path: /trips/user/{user}/create
+  controller: App\Controller\API\TripController::create
+  methods: POST
+
+trip_api.trips.show:
+  path: /trips/{trip}/user/{user}/show
+  controller: App\Controller\API\TripController::show
+  methods: GET
+
+trip_api.trips.update:
+  path: /trips/{trip}/user/{user}/update
+  controller: App\Controller\API\TripController::update
+  methods: PUT
+
+trip_api.trips.delete:
+  path: /trips/{trip}/user/{user}/delete
+  controller: App\Controller\API\TripController::delete
+  methods: DELETE

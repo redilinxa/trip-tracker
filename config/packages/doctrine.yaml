@@ -1,0 +1,51 @@
+doctrine:
+    dbal:
+        default_connection: default
+        connections:
+            default:
+                url: '%env(resolve:DATABASE_URL)%'
+#                host: localhost
+#                port: null
+#                user: root
+#                password: null
+#                driver: pdo_mysql
+                logging: true
+                profiling: true
+                profiling_collect_backtrace: false
+                options: {  }
+                mapping_types: {  }
+                default_table_options: {  }
+                slaves: {  }
+                shards: {  }
+        types: {  }
+    orm:
+        auto_generate_proxy_classes: true
+        default_entity_manager: default
+        entity_managers:
+            default:
+                naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
+                auto_mapping: true
+                mappings:
+                    App:
+                        is_bundle: false
+                        type: annotation
+                        dir: /var/www/src/Entity
+                        prefix: App\Entity
+                        alias: App
+                        mapping: true
+                query_cache_driver:
+                    type: null
+                metadata_cache_driver:
+                    type: null
+                result_cache_driver:
+                    type: null
+                class_metadata_factory_name: Doctrine\ORM\Mapping\ClassMetadataFactory
+                default_repository_class: Doctrine\ORM\EntityRepository
+                quote_strategy: doctrine.orm.quote_strategy.default
+                entity_listener_resolver: null
+                repository_factory: doctrine.orm.container_repository_factory
+                hydrators: {  }
+                filters: {  }
+        proxy_dir: '%kernel.cache_dir%/doctrine/orm/Proxies'
+        proxy_namespace: Proxies
+        resolve_target_entities: {  }
